@@ -5,10 +5,9 @@ export default (code) => {
 
   less.render(code, {}, (err, data) => {
     if (err) {
-      result.err = err;
+      result.err = `Less Compiler Error: line ${err.line}, index ${err.index} ${err.message}`;
       return
     }
-    console.log('Sss')
     result.compiledCode = data.css;
   });
   return result

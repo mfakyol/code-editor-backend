@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node server/index.js"
+    "start": "nodemon server/index.js --exec babel-node"
   },
   "author": "",
   "license": "ISC",
@@ -23,11 +23,12 @@
     "jsonwebtoken": "^8.5.1",
     "less": "^4.1.0",
     "mongoose": "^5.10.10",
+    "nanoid": "^3.1.20",
     "node-sass": "^5.0.0",
     "pug": "^3.0.0",
     "pug-filters": "^4.0.0",
     "showdown": "^1.9.1",
-    "uuid": "^8.3.1"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

@@ -7,7 +7,7 @@ export default (template) => {
     result.compiledCode = pug.render(template);
   } catch (e) {
     result.status = false;
-    result.err = e;
+    result.err = `Pug Compiler Error: Line ${e.line}, column ${e.column} ${e.msg}`;
   }
   return result;
 };

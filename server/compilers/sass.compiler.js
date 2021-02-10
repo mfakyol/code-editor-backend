@@ -13,7 +13,7 @@ export default (code) => {
       .css.toString();
   } catch (e) {
     result.status = false;
-    result.err = e;
+    result.err = `Sass Compiler Error: Line ${e.line}, column ${e.column}, ${e.message}`;
   }
 
   return result;
