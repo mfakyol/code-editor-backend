@@ -104,7 +104,7 @@ const route = () => {
           return res.send({ status: false, message: "Invalid api key." });
 
 
-        CodeModel.find({userId: user._id},{title:1, id:1,lastModifiedDate:1})
+        CodeModel.find({userId: user._id, isDeleted:false},{title:1, id:1,lastModifiedDate:1})
         .then(codes => {
           delete user._doc._id
           return res.send({ status: true, user: {...user._doc, codes}});

@@ -8,8 +8,7 @@ export default (code) => {
     }).code;
   } catch (e) {
     result.status = false;
-    result.err = e;
-    console.log(e);
+    result.err = `Babel Compiler Error: line: ${e.loc.line} column: ${e.loc.column}`;
   }
 
   return result;

@@ -48,12 +48,13 @@ const route = () => {
       .catch((e) => res.send({ status: false, message: "Server error." }));
   });
 
+
   router.route("/codes").get(checkJWT, (req, res) => {
     const { apiKey } = req.token;
     UserModel.findOne({ apiKey })
       .then((user) => {
         if (!user) return res.send({ status: false, message: "Invalid user." });
-        CodeModel.find({ userId: user._id }).then((codes) => {
+        CodeModel.find({ userId: user._id, isDeleted: false}).then((codes) => {
           if (!codes)
             return res.send({ status: false, message: "Invalid codeId." });
           return res.send({ status: true, codes });
