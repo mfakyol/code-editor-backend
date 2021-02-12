@@ -1,4 +1,4 @@
-## express-starter-kit
+## Çalıştırmak için
 
 -> npm install  
 -> npm start
